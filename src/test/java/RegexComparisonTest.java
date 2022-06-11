@@ -17,7 +17,7 @@ public class RegexComparisonTest {
         Matcher matcher = Pattern.compile(TestUtils.emailRegex).matcher(inputText);
         String actualValue = matcher.replaceAll("XXX@XXX.XX");
 
-        System.out.println(System.currentTimeMillis() - start);
+        System.out.println(System.currentTimeMillis() - start); // it's about 38 ms
         assertFalse(actualValue.contains(email));
     }
 
@@ -30,7 +30,7 @@ public class RegexComparisonTest {
         Matcher matcher = Pattern.compile(TestUtils.emailRegex).matcher(inputText);
         matcher.replaceAll("XXX@XXX.XX");
 
-        System.out.println(System.currentTimeMillis() - start);
+        System.out.println(System.currentTimeMillis() - start); // it's about 8308 ms
     }
 
     @Test
@@ -42,7 +42,7 @@ public class RegexComparisonTest {
         com.google.re2j.Matcher matcher = com.google.re2j.Pattern.compile(TestUtils.emailRegex).matcher(inputText);
         String actualValue = matcher.replaceAll("XXX@XXX.XX");
 
-        System.out.println(System.currentTimeMillis() - start);
+        System.out.println(System.currentTimeMillis() - start); // it's about 55 ms
         assertFalse(actualValue.contains(email));
     }
 
@@ -55,7 +55,7 @@ public class RegexComparisonTest {
         com.google.re2j.Matcher matcher = com.google.re2j.Pattern.compile(TestUtils.emailRegex).matcher(inputText);
         matcher.replaceAll("XXX@XXX.XX");
 
-        System.out.println(System.currentTimeMillis() - start);
+        System.out.println(System.currentTimeMillis() - start); // it's about 72 ms
     }
 
 }
