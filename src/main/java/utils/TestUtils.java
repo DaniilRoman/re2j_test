@@ -4,7 +4,7 @@ import java.util.*;
 
 public class TestUtils {
     public static String emailRegex = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
-    private static int numberOfIterations = 50;
+    private static int numberOfIterations = 500;
 
     public static String getRandomLongWord(String appendedText) {
         StringBuilder inputText = new StringBuilder();

@@ -2,12 +2,11 @@ import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import org.junit.jupiter.api.Test;
 import utils.TestUtils;
 
-import java.util.regex.Pattern;
 
 public class PatternSizeTest {
     @Test
     public void standardPatternSizeTest() {
-        Pattern citiesRegex = Pattern.compile(String.join("|", TestUtils.usCitiesAndTowns));
+        java.util.regex.Pattern citiesRegex = java.util.regex.Pattern.compile(String.join("|", TestUtils.usCitiesAndTowns));
 
         System.out.println(ObjectSizeCalculator.getObjectSize(citiesRegex));
     }

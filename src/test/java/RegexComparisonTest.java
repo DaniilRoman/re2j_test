@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 public class RegexComparisonTest {
 
     @Test
-    public void standardRegexWithEmailTest() {
+    public void standardRegexWithEmailInTextWithoutBacktrackingIssueTest() {
         String email = "test@test.com";
         long start = System.currentTimeMillis();
 
@@ -23,7 +23,7 @@ public class RegexComparisonTest {
 
 
     @Test
-    public void standardRegexWithoutEmailTest() {
+    public void standardRegexWithoutEmailInTextWithBacktrackingIssueTest() {
         long start = System.currentTimeMillis();
 
         String inputText = TestUtils.getRandomLongWord("");
@@ -34,7 +34,7 @@ public class RegexComparisonTest {
     }
 
     @Test
-    public void re2jWithEmailTest() {
+    public void re2jRegexWithEmailInTextWithoutBacktrackingIssueTest() {
         String email = "test@test.com";
         long start = System.currentTimeMillis();
 
@@ -48,7 +48,7 @@ public class RegexComparisonTest {
 
 
     @Test
-    public void re2jWithoutEmailTest() {
+    public void re2jRegexWithoutEmailInTextWithoutBacktrackingIssueTest() {
         long start = System.currentTimeMillis();
 
         String inputText = TestUtils.getRandomLongWord("");
