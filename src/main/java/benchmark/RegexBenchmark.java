@@ -56,16 +56,16 @@ public class RegexBenchmark {
         public Pattern emailRegex = Pattern.compile(TestUtils.emailRegex);
         public com.google.re2j.Pattern re2jEmailRegex = com.google.re2j.Pattern.compile(TestUtils.emailRegex);
 
-        public String cityInputTextWords = TestUtils.getRandomWords(injectedCity);
-        public String emailInputTextWords = TestUtils.getRandomWords(injectedEmail);
+        public String cityInputTextWords = TestUtils.getRandomLongWord(injectedCity);
+        public String emailInputTextWords = TestUtils.getRandomLongWord(injectedEmail);
     }
 
 }
 
 // Benchmark                                          Mode  Cnt  Score    Error  Units
-//RegexBenchmark.standartRegexWithCityDataBenchmark   avgt    5  0.159 ±  0.017   s/op
-//RegexBenchmark.re2JWithCityDataBenchmark            avgt    5  0.633 ±  0.016   s/op
+//RegexBenchmark.standartRegexWithCityDataBenchmark   avgt    5  0.147 ±  0.018   s/op
+//RegexBenchmark.re2JWithCityDataBenchmark            avgt    5  0.625 ±  0.040   s/op
 
-//RegexBenchmark.standartRegexWithEmailDataBenchmark  avgt    5  0.019 ±  0.002   s/op
+//RegexBenchmark.standartRegexWithEmailDataBenchmark  avgt    5  0.004 ±  0.001   s/op
 //RegexBenchmark.re2JWithEmailDataBenchmark           avgt    5  0.002 ±  0.001   s/op
 

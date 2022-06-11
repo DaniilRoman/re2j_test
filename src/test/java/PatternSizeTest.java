@@ -8,13 +8,13 @@ public class PatternSizeTest {
     public void standardPatternSizeTest() {
         java.util.regex.Pattern citiesRegex = java.util.regex.Pattern.compile(String.join("|", TestUtils.usCitiesAndTowns));
 
-        System.out.println(ObjectSizeCalculator.getObjectSize(citiesRegex));
+        System.out.println(ObjectSizeCalculator.getObjectSize(citiesRegex)); // it's about 197608 bytes
     }
 
     @Test
     public void re2jPatternSizeTest() {
         com.google.re2j.Pattern citiesRegex = com.google.re2j.Pattern.compile(String.join("|", TestUtils.usCitiesAndTowns));
 
-        System.out.println(ObjectSizeCalculator.getObjectSize(citiesRegex));
+        System.out.println(ObjectSizeCalculator.getObjectSize(citiesRegex)); // it's about 1026872 bytes
     }
 }

@@ -18,20 +18,6 @@ public class TestUtils {
         return inputText.toString();
     }
 
-    public static String getRandomWords(String appendedText) {
-        StringBuilder inputText = new StringBuilder();
-        for (int i = 0; i < numberOfIterations; i++) {
-            inputText.append(UUID.randomUUID());
-            inputText.append(" ");
-            if (i % 10 == 0) {
-                inputText.append(appendedText);
-                inputText.append(" ");
-            }
-        }
-
-        return inputText.toString();
-    }
-
     //    https://www.britannica.com/topic/list-of-cities-and-towns-in-the-United-States-2023068
 //    Array.from(document.getElementsByClassName("topic-content pt-sm-15")[0].getElementsByTagName("section")).slice(1).flatMap(x => Array.from(x.children[1].children)).map(x => x.outerText)
     public static List<String> usCitiesAndTowns = Arrays.asList(
