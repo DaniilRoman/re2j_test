@@ -18,7 +18,7 @@ public class TestUtils {
         return inputText.toString();
     }
 
-    //    https://www.britannica.com/topic/list-of-cities-and-towns-in-the-United-States-2023068
+//    https://www.britannica.com/topic/list-of-cities-and-towns-in-the-United-States-2023068
 //    Array.from(document.getElementsByClassName("topic-content pt-sm-15")[0].getElementsByTagName("section")).slice(1).flatMap(x => Array.from(x.children[1].children)).map(x => x.outerText)
     public static List<String> usCitiesAndTowns = Arrays.asList(
             "Alexander City",

@@ -4,8 +4,6 @@ import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import utils.TestUtils;
 
-import java.util.regex.Pattern;
-
 
 public class RegexBenchmark {
 
@@ -15,7 +13,7 @@ public class RegexBenchmark {
     @Warmup(iterations = 2)
     @Measurement(iterations = 5)
     public void standartRegexWithCityDataBenchmark(MyState myState, Blackhole blackhole) {
-        myState.citiesRegex.matcher(myState.cityInputTextWords).replaceAll("XXX");
+        myState.standartCitiesRegex.matcher(myState.cityInputTextWords).replaceAll("XXX");
     }
 
     @Benchmark
@@ -33,7 +31,7 @@ public class RegexBenchmark {
     @Warmup(iterations = 2)
     @Measurement(iterations = 5)
     public void standartRegexWithEmailDataBenchmark(MyState myState, Blackhole blackhole) {
-        myState.emailRegex.matcher(myState.emailInputTextWords).replaceAll("XXX");
+        myState.standartEmailRegex.matcher(myState.emailInputTextWords).replaceAll("XXX");
     }
 
     @Benchmark
@@ -50,10 +48,10 @@ public class RegexBenchmark {
         private String injectedCity = "Richmond";
         private String injectedEmail = "text@text.com";
 
-        public Pattern citiesRegex = Pattern.compile(String.join("|", TestUtils.usCitiesAndTowns));
+        public java.util.regex.Pattern standartCitiesRegex = java.util.regex.Pattern.compile(String.join("|", TestUtils.usCitiesAndTowns));
         public com.google.re2j.Pattern re2jCitiesRegex = com.google.re2j.Pattern.compile(String.join("|", TestUtils.usCitiesAndTowns));
 
-        public Pattern emailRegex = Pattern.compile(TestUtils.emailRegex);
+        public java.util.regex.Pattern standartEmailRegex = java.util.regex.Pattern.compile(TestUtils.emailRegex);
         public com.google.re2j.Pattern re2jEmailRegex = com.google.re2j.Pattern.compile(TestUtils.emailRegex);
 
         public String cityInputTextWords = TestUtils.getRandomLongWord(injectedCity);
